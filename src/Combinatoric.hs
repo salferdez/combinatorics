@@ -7,7 +7,7 @@ module Combinatoric
     , length'
     , sum'
     , permutationRepKnown
-    , stirling
+    , stirlingSecondKind
 
     ) where
 
@@ -50,10 +50,10 @@ permutationRepKnown n (x:xs)
             factProd  y []     = y
             factProd  y (x:xs) = factProd ( y * factorial x) xs
 
-stirling :: Integer -> Integer ->  Integer
-stirling n 1 = 1
-stirling n 2 = ((2 ^n)- 2) `div` 2
-stirling n k
+stirlingSecondKind :: Integer -> Integer ->  Integer
+stirlingSecondKind n 1 = 1
+stirlingSecondKind n 2 = ((2 ^n)- 2) `div` 2
+stirlingSecondKind n k
     | k > n      = 0
     | k == n     = 1
     | k == (n-1) = combination n 2

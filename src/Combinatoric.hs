@@ -57,4 +57,4 @@ stirlingSecondKind n k
     | k > n      = 0
     | k == n     = 1
     | k == (n-1) = combination n 2
-    | otherwise  = stirling (n-1) (k-1) +  k * stirling (n-1) k
+    | otherwise  = stirlingSecondKind (n-1) (k-1) +  k * stirlingSecondKind (n-1) k
